@@ -1,0 +1,65 @@
+portal
+-T100E
+-T101
+-T102
+-T103
+-A102
+-A105
+-A113
+-A114
+-A115
+
+madre bernarda
+-T100E
+-T101
+-T102
+-T103
+
+sata lucia
+-A103
+-A104
+-A107
+
+la castellana
+-T100E
+-T101
+-X106
+
+los angeles
+-T102
+
+los ejecutivos
+-T101
+-T103
+-X106
+
+villa olimpica
+-T102
+
+cuatro vientos
+-T100E
+-T101
+-T103
+
+republica del libano
+-T102
+-X106
+
+españa
+-T101
+-T103
+
+maria auxiliadora
+-T100E
+-T102
+-X106
+
+el prado
+-T101
+-T102
+
+bazurto
+-T101
+-T102
+-T103
+-X104
