@@ -32,34 +32,45 @@ los ejecutivos
 -T101
 -T103
 -X106
+-X101
 
 villa olimpica
 -T102
+-X101
 
 cuatro vientos
 -T100E
 -T101
 -T103
+-X101
 
 republica del libano
 -T102
 -X106
+-X101
 
-españa
+espaÃ±a
 -T101
 -T103
+-X101
 
 maria auxiliadora
 -T100E
 -T102
 -X106
+-X101
 
 el prado
 -T101
 -T102
+-X103
 
 bazurto
 -T101
 -T102
 -T103
 -X104
+-X101
+-X105
+-X103
+-X102
