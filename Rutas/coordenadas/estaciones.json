@@ -1,0 +1,94 @@
+{
+    "estaciones": {
+        "Patio Portal Transcaribe": {
+            "lgn": 10.396750,
+            "lat": -75.472193
+
+        },
+        "Estación El Gallo" :{
+            "lgn": 10.396166,
+            "lat": -75.476238
+        },
+
+        "Estación Transcaribe Madre Bernarda" : {
+            "lgn": 10.395251,   
+            "lat": -75.478313
+        },
+
+        "Estación de Transcaribe — La Castellana" :{
+            "lgn": 10.394477,
+            "lat":  -75.486635
+        },
+
+        "Estación Transcaribe Los Angeles" : {
+            "lgn":  10.395039,
+            "lat":  -75.490367
+        },
+        "Estación Transcaribe Ejecutivos" :{
+            "lgn": 10.399543,
+            "lat": -75.493667
+        },
+
+        "Estación Villa Olímpica Transcaribe" : {
+            "lgn": 10.403614,
+            "lat": -75.497239
+        },
+
+ 
+        "Estación  Cuatro Vientos Transcaribe" :{
+            "lgn": 10.406525,
+            "lat": -75.502689
+        },
+
+        "Estación Transcaribe — Barrio El Libano" : {
+            "lgn": 10.407349,
+            "lat": -75.507496
+        },
+        "Estación de Transcaribe — España" :{
+            "lgn": 10.408317,
+            "lat": -75.512849
+        },
+
+        "Estación de Transcaribe — María Auxiliadora" : {
+            "lgn": 10.409019,
+            "lat": -75.515855
+        },
+        "Estación Transcaribe — El Prado" :{
+            "lgn": 10.411166,
+            "lat": -75.519590
+        },
+
+        "Estación de Transcaribe — Mercado de Bazurto" : {
+            "lgn": 10.413813,
+            "lat": -75.524022
+        },
+        "Estación de Transcaribe — Las Delicias" :{
+            "lgn": 10.416603,
+            "lat": -75.527902
+        },
+
+        "Estación de Transcaribe — La Popa" : {
+            "lgn": 10.420548,
+            "lat": -75.531094
+        },
+        "Estación de Transcaribe — La Amador" :{
+            "lgn": 10.422411,
+            "lat": -75.534586
+        },
+
+        "Estación de Transcaribe — Chambacú" : {
+            "lgn": 10.425940,
+            "lat": -75.540502
+        },
+        "Estación de Transcaribe — Centro" :{
+            "lgn": 10.425005,
+            "lat":  -75.546703
+        },
+
+        "Estación de Transcaribe — Bodeguita" : {
+            "lgn": 10.420286,
+            "lat": -75.551233
+        }
+        
+    }
+}
