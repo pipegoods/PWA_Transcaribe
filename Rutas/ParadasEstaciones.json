@@ -1,0 +1,175 @@
+{
+    "portal": {
+        "Troncales": [
+            "T100E",
+            "T101",
+            "T102",
+            "T103"        
+        ],
+        "Alimentadores": [
+            "A102",
+            "A105",
+            "A113",
+            "A114",
+            "A115"
+        ],
+        "PreTroncales": [
+            "X102"
+        ]
+    },
+    "Madre_Bernanda": {
+        "Troncales": [
+            "T100E",
+            "T101",
+            "T102",
+            "T103"        
+        ],
+        "Alimentadores": [
+
+        ],
+        "PreTroncales": [
+            
+        ]
+    }, 
+    "Santa_Lucia": {
+        "Troncales": [
+       
+        ],
+        "Alimentadores": [
+            "A103",
+            "A104",
+            "A107",
+            "A105",
+            "A108"
+        ],
+        "PreTroncales": [
+            
+        ]
+    },
+    "La_Castellana": {
+        "Troncales": [
+            "T100E",
+            "T101"        
+        ],
+        "Alimentadores": [
+
+        ],
+        "PreTroncales": [
+            "X106"
+        ]
+    }, 
+    "Los_Angeles": {
+        "Troncales": [
+            "T102"
+        ],
+        "Alimentadores": [
+
+        ],
+        "PreTroncales": [
+            
+        ]
+    },
+    "LosEjecutivos": {
+        "Troncales": [
+            "T101",
+            "T103"
+        ],
+        "Alimentadores": [
+
+        ],
+        "PreTroncales": [
+            "X106"
+        ]
+    },
+    "Villa_Olimpica": {
+        "Troncales": [
+            "T102"
+        ],
+        "Alimentadores": [
+
+        ],
+        "PreTroncales": [
+            "X101"
+        ]
+    },
+    "Cuatro_Vientos": {
+        "Troncales": [
+            "T100E",
+            "T101",
+            "T103"
+        ],
+        "Alimentadores": [
+
+        ],
+        "PreTroncales": [
+            "X101"
+        ]
+    },
+    "Republica_del_libano": {
+        "Troncales": [
+            "T102"
+        ],
+        "Alimentadores": [
+
+        ],
+        "PreTroncales": [
+            "X101",
+            "X106"
+        ]
+    },
+    "España": {
+        "Troncales": [
+            "T101",
+            "T103"
+        ],
+        "Alimentadores": [
+
+        ],
+        "PreTroncales": [
+            "X101"
+        ]
+    },
+    "Maria_Auxiliadora": {
+        "Troncales": [
+            "T100E",
+            "T102"
+        ],
+        "Alimentadores": [
+
+        ],
+        "PreTroncales": [
+            "X101",
+            "X106"
+        ]
+    },
+    "El_Prado": {
+        "Troncales": [
+            "T101",
+            "T102"
+        ],
+        "Alimentadores": [
+
+        ],
+        "PreTroncales": [
+            "X103"
+        ]
+    },
+    "Bazurto": {
+        "Troncales": [
+            "T101",
+            "T102",
+            "T103"
+        ],
+        "Alimentadores": [
+
+        ],
+        "PreTroncales": [
+            "X101",
+            "X104",
+            "X102",
+            "X103",
+            "X105"
+        ]
+    },
+    
+}
