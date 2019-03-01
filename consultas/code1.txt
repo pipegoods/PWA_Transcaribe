@@ -1,0 +1,16 @@
+//Ajustar mapa y saber el porcentaje de zoom que tiene
+
+var map = new google.maps.Map(document.getElementById('map_canvas'), {
+        disableDefaultUI : true,
+        zoom : 12,
+        center : new google.maps.LatLng(17.1312321,78.23123123),
+        mapTypeId : google.maps.MapTypeId.ROADMAP
+    });
+
+
+
+google.maps.event.addListener(map, 'zoom_changed',function() {
+console.log(map.getZoom());
+});
+
+//Se podría tomar este ejemplo xd
