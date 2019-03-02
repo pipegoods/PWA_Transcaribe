@@ -170,5 +170,79 @@
             "X103",
             "X105"
         ]
+    },
+    "Las_Delicias": {
+        "Troncales": [
+            
+        ],
+        "Alimentadores": [
+
+        ],
+        "PreTroncales": [
+            
+        ]
+    },
+    "La_Popa": {
+        "Troncales": [
+            "T101"
+
+        ],
+        "Alimentadores": [
+
+        ],
+        "PreTroncales": [
+            
+        ]
+    },
+    "Lo_Amador": {
+        "Troncales": [
+            
+        ],
+        "Alimentadores": [
+
+        ],
+        "PreTroncales": [
+            
+        ]
+    },
+    "Chambacu": {
+        "Troncales": [
+            "T101",
+"T102"
+
+        ],
+        "Alimentadores": [
+
+        ],
+        "PreTroncales": [
+            
+        ]
+    },
+    "Centro": {
+        "Troncales": [
+            "T100E",
+            "T101",
+"T102"
+
+        ],
+        "Alimentadores": [
+
+        ],
+        "PreTroncales": [
+            
+        ]
+    },
+    "La_Bodeguita": {
+        "Troncales": [
+            "T100E",
+            "T101"
+
+        ],
+        "Alimentadores": [
+
+        ],
+        "PreTroncales": [
+            
+        ]
     }
 }

@@ -8,44 +8,7 @@
   <style>
     /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
-    #map {
-      height: 100%;
-    }
 
-    /* Optional: Makes the sample page fill the window. */
-    html,
-    body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-    }
-  </style>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-</head>
-
-<body>
-  <div id="map"></div>
-  <script>
-
-    function initMap() {
-
-
-      var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 14,
-        center: {lat: 10.408975, lng: -75.508813}
-      });
-
-      var image = 'icon/32x20.png';
-      var marker = new google.maps.Marker({
-        position: {lat: 10.408975, lng: -75.508813},
-        map: map,
-        icon: image,
-        title: 'Hello World!'
-      });
-    }
-  </script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyConlCKNtMiVjqODH5mzwlFF8o--cCfw7Q&callback=initMap"
-    async defer></script>
 
 </body>
 
