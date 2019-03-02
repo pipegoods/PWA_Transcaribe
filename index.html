@@ -1,54 +1,15 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <meta charset="utf-8">
-    <title>PWA Transcaribe</title>
-    <style>
-      /* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
-      #map {
-        height: 100%;
-      }
-      /* Optional: Makes the sample page fill the window. */
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-    </style>
-  </head>
-  <body>
-    <div id="map"></div>
-    <script>
-      
-      function initMap() {
-        var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 13,
-        center: {lat: 10.408975, lng: -75.508813 }
-      });
-      var image = 'icon/estacionTranscaribe2.png';
-      marker = new google.maps.Marker({
-        map: map,
-        draggable: true,
-        icon: image,
-        animation: google.maps.Animation.DROP,
-        position: {lat: 10.408975, lng: -75.508813 }
-      });
-      marker.addListener('click', toggleBounce);
-    }
 
-    function toggleBounce() {
-      if (marker.getAnimation() !== null) {
-        marker.setAnimation(null);
-      } else {
-        marker.setAnimation(google.maps.Animation.BOUNCE);
-      }
-      
-      }
-    </script>
- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyConlCKNtMiVjqODH5mzwlFF8o--cCfw7Q&callback=initMap"
- async defer></script>
+<head>
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+  <meta charset="utf-8">
+  <title>PWA Transcaribe</title>
+  <style>
+    /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+
 
 </body>
+
 </html>
