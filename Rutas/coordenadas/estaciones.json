@@ -3,8 +3,8 @@
         "Patio Portal Transcaribe": {
             "lgn": 10.396750,
             "lat": -75.472193
-
         },
+
         "Estación El Gallo" :{
             "lgn": 10.396166,
             "lat": -75.476238
@@ -24,6 +24,7 @@
             "lgn":  10.395039,
             "lat":  -75.490367
         },
+
         "Estación Transcaribe Ejecutivos" :{
             "lgn": 10.399543,
             "lat": -75.493667
@@ -34,7 +35,6 @@
             "lat": -75.497239
         },
 
- 
         "Estación  Cuatro Vientos Transcaribe" :{
             "lgn": 10.406525,
             "lat": -75.502689
@@ -44,6 +44,7 @@
             "lgn": 10.407349,
             "lat": -75.507496
         },
+
         "Estación de Transcaribe — España" :{
             "lgn": 10.408317,
             "lat": -75.512849
@@ -53,6 +54,7 @@
             "lgn": 10.409019,
             "lat": -75.515855
         },
+
         "Estación Transcaribe — El Prado" :{
             "lgn": 10.411166,
             "lat": -75.519590
@@ -62,6 +64,7 @@
             "lgn": 10.413813,
             "lat": -75.524022
         },
+
         "Estación de Transcaribe — Las Delicias" :{
             "lgn": 10.416603,
             "lat": -75.527902
@@ -71,6 +74,7 @@
             "lgn": 10.420548,
             "lat": -75.531094
         },
+
         "Estación de Transcaribe — La Amador" :{
             "lgn": 10.422411,
             "lat": -75.534586
@@ -80,6 +84,7 @@
             "lgn": 10.425940,
             "lat": -75.540502
         },
+
         "Estación de Transcaribe — Centro" :{
             "lgn": 10.425005,
             "lat":  -75.546703
@@ -88,8 +93,7 @@
         "Estación de Transcaribe — Bodeguita" : {
             "lgn": 10.420286,
             "lat": -75.551233
-        }
-        
+        }      
     ]
 }
 

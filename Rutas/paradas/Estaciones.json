@@ -17,6 +17,7 @@
             "X102"
         ]
     },
+
     "Madre_Bernanda": {
         "Troncales": [
             "T100E",
@@ -31,6 +32,7 @@
             
         ]
     }, 
+
     "Santa_Lucia": {
         "Troncales": [
        
@@ -46,6 +48,7 @@
             
         ]
     },
+
     "La_Castellana": {
         "Troncales": [
             "T100E",
@@ -58,6 +61,7 @@
             "X106"
         ]
     }, 
+
     "Los_Angeles": {
         "Troncales": [
             "T102"
@@ -69,6 +73,7 @@
             
         ]
     },
+
     "LosEjecutivos": {
         "Troncales": [
             "T101",
@@ -81,6 +86,7 @@
             "X106"
         ]
     },
+
     "Villa_Olimpica": {
         "Troncales": [
             "T102"
@@ -92,6 +98,7 @@
             "X101"
         ]
     },
+
     "Cuatro_Vientos": {
         "Troncales": [
             "T100E",
@@ -105,6 +112,7 @@
             "X101"
         ]
     },
+
     "Republica_del_libano": {
         "Troncales": [
             "T102"
@@ -117,6 +125,7 @@
             "X106"
         ]
     },
+
     "España": {
         "Troncales": [
             "T101",
@@ -129,6 +138,7 @@
             "X101"
         ]
     },
+
     "Maria_Auxiliadora": {
         "Troncales": [
             "T100E",
@@ -142,6 +152,7 @@
             "X106"
         ]
     },
+
     "El_Prado": {
         "Troncales": [
             "T101",
@@ -154,6 +165,7 @@
             "X103"
         ]
     },
+
     "Bazurto": {
         "Troncales": [
             "T101",
@@ -171,6 +183,7 @@
             "X105"
         ]
     },
+
     "Las_Delicias": {
         "Troncales": [
             
@@ -182,6 +195,7 @@
             
         ]
     },
+
     "La_Popa": {
         "Troncales": [
             "T101"
@@ -194,6 +208,7 @@
             
         ]
     },
+
     "Lo_Amador": {
         "Troncales": [
             
@@ -205,11 +220,11 @@
             
         ]
     },
+    
     "Chambacu": {
         "Troncales": [
             "T101",
-"T102"
-
+            "T102"
         ],
         "Alimentadores": [
 
@@ -218,12 +233,12 @@
             
         ]
     },
+
     "Centro": {
         "Troncales": [
             "T100E",
             "T101",
-"T102"
-
+            "T102"
         ],
         "Alimentadores": [
 
@@ -232,11 +247,11 @@
             
         ]
     },
+
     "La_Bodeguita": {
         "Troncales": [
             "T100E",
             "T101"
-
         ],
         "Alimentadores": [
 

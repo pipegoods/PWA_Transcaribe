@@ -1,4 +1,3 @@
-
 console.log(mian);
 var listaMarcadores = [];
 function initMap() {
@@ -11,14 +10,20 @@ function initMap() {
   for (var clave in mian){
     // Controlando que json realmente tenga esa propiedad
     if (mian.hasOwnProperty(clave)) {
+      console.log(mian[clave]);
+      
       // Mostrando en pantalla la clave junto a su valor
       console.log ("La clave es " + clave+ " y el valor es " + mian[clave].lgn);
-      listaMarcadores.push(new google.maps.Marker({
+      var marker = new google.maps.Marker({
         draggable: false,
         icon: image,
         animation: google.maps.Animation.DROP,
         position: {lat: mian[clave].lgn, lng: mian[clave].lat }
-      }));
+      });
+      listaMarcadores.push(marker);
+      // se crea el mensaje de la info de los marcadores
+      var message = buildInfoWindowMessage(mian[clave], )
+      addInfoWindow(marker, message);
     }
   }
   
@@ -32,4 +37,20 @@ function initMap() {
 
 }
 
+// se crea el mensaje de la info de los marcadores
+function buildInfoWindowMessage(estacion) {
+  var message = estacion.name;
+  return message;
+}
 
+// añade el window info de las estaciones a los marcadores
+function addInfoWindow(marker, message) {
+
+  var infoWindow = new google.maps.InfoWindow({
+      content: message
+  });
+
+  google.maps.event.addListener(marker, 'click', function () {
+      infoWindow.open(map, marker);
+  });
+}
