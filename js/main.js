@@ -20,9 +20,9 @@ function initMap() {
         position: {lat: estaciones_json[estaciones].lgn, lng: estaciones_json[estaciones].lat }, // Se obtiene las latitudes y longitudes de las estaciones en el json
         icon: 'http://maps.google.com/mapfiles/ms/icons/orange-dot.png' // Esta es un marcador naranja que nos proporciona google
       });
-      listaMarcadores.push(marker);
+      listaMarcadoresEstaciones.push(marker);
       // se crea el mensaje de la info de los marcadores
-      var message = buildInfoWindowMessage(mian[clave], )
+      var message = buildInfoWindowMessage(estaciones_json[estaciones])
       addInfoWindow(marker, message);
     }
   }
