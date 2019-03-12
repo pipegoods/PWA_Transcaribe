@@ -23,6 +23,7 @@ function initMap() {
       listaMarcadoresEstaciones.push(marker);
       // se crea el mensaje de la info de los marcadores
       var message = buildInfoWindowMessage(estaciones_json[estaciones])
+      //anexa informacion a marcador
       addInfoWindow(marker, message);
     }
   }
@@ -65,10 +66,34 @@ function initMap() {
 
 }
 
+//funcion en la que se construyen las cadenas que contienen las rutas
+function buildRutasInforMessage(estacion, cadSitio){ 
+  var varSitio = cadSitio + ": "; 
+  try {
+    if(estacion[cadSitio].length > 0){
+      estacion[cadSitio].forEach((sitio) => {
+        varSitio = varSitio+ " " + sitio + ",";
+      });
+      varSitio = varSitio.substring(0,varSitio.length-1);
+      varSitio = varSitio + '<br>';
+    } else {
+      varSitio = varSitio + "Ninguno" + '<br>';
+    }  
+    return varSitio;
+  } catch (TypeError) {
+    varSitio = varSitio + "Ninguno" + '<br>';
+    return varSitio;
+  }
+}
+
 // se crea el mensaje de la info de los marcadores
 function buildInfoWindowMessage(estacion) {
-  var message = estacion.name;
-  return message;
+  var estacion_name = '<b>' + estacion.name + '</b>' + '<br>';
+  var troncales = buildRutasInforMessage(estacion, "Troncales");
+  var alimentadores =  buildRutasInforMessage(estacion, "Alimentadores");
+  var preTroncales = buildRutasInforMessage(estacion, "PreTroncales");
+  buildRutasInforMessage(estacion, troncales);
+  return estacion_name + troncales + alimentadores + preTroncales;
 }
 
 // añade el window info de las estaciones a los marcadores
