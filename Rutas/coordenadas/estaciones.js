@@ -1,4 +1,4 @@
-mian = 
+var estaciones_json = 
     {
         "PatioPortal": {
             "lgn": 10.396750,

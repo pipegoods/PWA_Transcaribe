@@ -1,34 +1,63 @@
-
-console.log(mian);
-var listaMarcadores = [];
+var listaMarcadoresEstaciones = []; //Arreglo lista de los marcadores de las estaciones
 function initMap() {
-    var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 13,
-    center: {lat: 10.408975, lng: -75.508813 }
-  });
-  var image = 'icon/32x20.png';
+    var infoWindow; //Ventana de informacion
 
-  for (var clave in mian){
-    // Controlando que json realmente tenga esa propiedad
-    if (mian.hasOwnProperty(clave)) {
-      // Mostrando en pantalla la clave junto a su valor
-      console.log ("La clave es " + clave+ " y el valor es " + mian[clave].lgn);
-      listaMarcadores.push(new google.maps.Marker({
-        draggable: false,
-        icon: image,
+    // Se inicializa el mapa con un zoom y un centro predeterminado
+    var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 14,
+    center: {lat: 10.408975, lng: -75.508813 },
+    disableDefaultUI: true // Se quitan los botones del mapa
+
+  });
+  infoWindow = new google.maps.InfoWindow; // Se inicializa la ventana de informacion
+
+  // Se hace un recorrido a la informacion del json de las estaciones
+  for (var estaciones in estaciones_json){ 
+    if (estaciones_json.hasOwnProperty(estaciones)) {
+      listaMarcadoresEstaciones.push(new google.maps.Marker({ // se crea un marcador por estacion
+        draggable: false, // No permite  que el marcador pueda moverse
         animation: google.maps.Animation.DROP,
-        position: {lat: mian[clave].lgn, lng: mian[clave].lat }
+        position: {lat: estaciones_json[estaciones].lgn, lng: estaciones_json[estaciones].lat }, // Se obtiene las latitudes y longitudes de las estaciones en el json
+        icon: 'http://maps.google.com/mapfiles/ms/icons/orange-dot.png' // Esta es un marcador naranja que nos proporciona google
       }));
     }
   }
   
-  listaMarcadores.forEach((marcador) => {
+  // Aqui se recorre la lista de los marcadores y se colocan en el mapa
+  listaMarcadoresEstaciones.forEach((marcador) => {
     marcador.setMap(map);
   });
 
-  google.maps.event.addListener(map, 'zoom_changed',function() {
-    console.log(map.getZoom());
-  });
+  // Funcion para tomar la pocision en tiempo real del usuario
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var pos = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      };
+
+      infoWindow.setPosition(pos);
+      infoWindow.setContent('Usted se encuentra aqui');
+      infoWindow.open(map);
+      map.setCenter(pos);
+      map.setZoom(15);
+    }, function() {
+      handleLocationError(true, infoWindow, map.getCenter());
+    });
+  } else {
+    // Browser doesn't support Geolocation
+    handleLocationError(false, infoWindow, map.getCenter());
+  }
+
+  function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+    infoWindow.setPosition(pos);
+    infoWindow.setContent(browserHasGeolocation ?
+                          'Error: The Geolocation service failed.' :
+                          'Error: Your browser doesn\'t support geolocation.');
+    infoWindow.open(map);
+  }
+  // Final funcion
+
 
 }
 
