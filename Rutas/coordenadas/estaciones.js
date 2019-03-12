@@ -1,4 +1,4 @@
-mian = 
+var estaciones_json = 
     {
         "PatioPortal": {
             "name" : "Patio Portal Transcaribe",
