@@ -11,6 +11,10 @@ function initMap() {
   });
   infoWindow = new google.maps.InfoWindow; // Se inicializa la ventana de informacion
 
+  //limita el zoom del scroll para no salir de la ciudad
+  var opt = { minZoom: 13.75, maxZoom: 22 };
+  map.setOptions(opt);
+
   // Se hace un recorrido a la informacion del json de las estaciones
   for (var estaciones in estaciones_json){ 
     if (estaciones_json.hasOwnProperty(estaciones)) {
