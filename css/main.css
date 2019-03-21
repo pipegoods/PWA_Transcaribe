@@ -9,7 +9,7 @@
         margin: 0;
         padding: 0;
       }
-
+      /*crea una panel flotante sobre el mapa*/
       .floatItem {
         position: absolute;
         top: 10%;
@@ -22,6 +22,23 @@
         -moz-box-shadow: 0px 0px 17px 7px rgba(0, 0, 0, 0.18);
         box-shadow: 0px 0px 17px 7px rgba(0, 0, 0, 0.18);
       }
+      /*se establece que a un tamaño de pantalla de 800px o inferior se modificaran los atributos de la clase*/
+      @media screen and (max-width: 800px) {
+        .floatItem {
+          position: absolute;
+          top: 60%;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          padding: 1rem;
+          max-width: 100%;
+          width: 100%;
+          background: #fff;
+          border-radius: 2px;
+          text-align: center;
+        }
+      }
+
 
       .iconE { grid-area: marcador1; }
       .iconP { grid-area: marcador2; }
@@ -29,7 +46,7 @@
       .mostrarT { grid-area: marcadorT; }
       .barraBusqueda { grid-area: barraBuscar; }
       .bloqueInformacion { grid-area: informacion; }
-
+      /*se establecen la distribucion de las rejillas disponibles en el panel flotante*/
       .grid-container {
         display: grid;
         grid-template-areas:
