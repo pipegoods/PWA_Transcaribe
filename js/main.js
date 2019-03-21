@@ -16,7 +16,7 @@ function initMap() {
   map.setOptions(opt);
 
   // coordenada limite suroeste
-  var so = new google.maps.LatLng(10.356972, -75.537709)
+  var so = new google.maps.LatLng(10.322967, -75.585290)
   //coordenada limite noreste
   var ne = new google.maps.LatLng(10.462836, -75.451327)
 
