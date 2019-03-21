@@ -9,3 +9,36 @@
         margin: 0;
         padding: 0;
       }
+
+      .floatItem {
+        position: absolute;
+        top: 10%;
+        left: 5%;
+        max-width: 90%;
+        width: 360px;
+        background: #fff;
+        border-radius: 8px;
+        -webkit-box-shadow: 0px 0px 17px 7px rgba(0, 0, 0, 0.18);
+        -moz-box-shadow: 0px 0px 17px 7px rgba(0, 0, 0, 0.18);
+        box-shadow: 0px 0px 17px 7px rgba(0, 0, 0, 0.18);
+      }
+
+      .iconE { grid-area: marcador1; }
+      .iconP { grid-area: marcador2; }
+      .iconR { grid-area: marcador3; }
+      .mostrarT { grid-area: marcadorT; }
+      .barraBusqueda { grid-area: barraBuscar; }
+      .bloqueInformacion { grid-area: informacion; }
+
+      .grid-container {
+        display: grid;
+        grid-template-areas:
+          'marcador1  marcador2 marcador3'
+          'marcadorT marcadorT marcadorT'
+          'barraBuscar barraBuscar barraBuscar'
+          'informacion informacion informacion'
+          'informacion informacion informacion';
+        grid-gap: 10px;
+        padding: 10px;
+      }
+

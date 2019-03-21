@@ -5,15 +5,30 @@
     <meta charset="utf-8">
     <title>PWA Transcaribe</title>
     <link rel="stylesheet" href="css/main.css">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    
   </head>
   <body>
     <div id="map"></div>
-
+    <div class="floatItem">
+      <div class="grid-container">
+          <a class="iconE"><img src="icon/32x20.png"></a>
+          <a class="iconP"><img src="icon/32x20.png"></a>
+          <a class="iconR"><img src="icon/32x20.png"></a>
+          <a class="waves-effect waves-light btn mostrarT">Mostrar todo</a>
+          <div class="barraBusqueda">
+            <input id="last_name" placeholder="Buscar" type="text" class="validate">
+          </div>
+          <div class="bloqueInformacion"> aqui se mostrara la informacion de las estaciones parderos etc.</div>
+      </div>
+    </div>
     <script type="text/javascript" src="Rutas/coordenadas/estaciones.js"></script>
-
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="js/main.js"></script>
- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyConlCKNtMiVjqODH5mzwlFF8o--cCfw7Q&callback=initMap"
- async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyConlCKNtMiVjqODH5mzwlFF8o--cCfw7Q&callback=initMap" async defer></script>
 
 </body>
 </html>
