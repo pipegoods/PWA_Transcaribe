@@ -15,6 +15,39 @@ function initMap() {
   var opt = { minZoom: 13.75, maxZoom: 22 };
   map.setOptions(opt);
 
+  // coordenada limite suroeste
+  var so = new google.maps.LatLng(10.356972, -75.537709)
+  //coordenada limite noreste
+  var ne = new google.maps.LatLng(10.462836, -75.451327)
+
+  //bouns para vizualizar solo Cartagena
+  var strictBounds = new google.maps.LatLngBounds(so,ne);
+
+  // EventListener evento de desplazamiento en el mapa
+  google.maps.event.addListener(map, 'dragend', function () {
+    if (strictBounds.contains(map.getCenter())) {
+      return;
+    } 
+    var c = map.getCenter(),
+    x = c.lng(),
+    y = c.lat(),
+    maxX = strictBounds.getNorthEast().lng(),
+    maxY = strictBounds.getNorthEast().lat(),
+    minX = strictBounds.getSouthWest().lng(),
+    minY = strictBounds.getSouthWest().lat();
+
+    if (x < minX) {
+      x = minX;
+    } if (x > maxX) {
+      x = maxX;
+    } if (y < minY) {
+      y = minY;
+    } if (y > maxY) {
+      y = maxY;
+    } 
+    map.setCenter(new google.maps.LatLng(y, x));
+ });
+
   // Se hace un recorrido a la informacion del json de las estaciones
   for (var estaciones in estaciones_json){ 
     if (estaciones_json.hasOwnProperty(estaciones)) {
