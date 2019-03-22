@@ -16,7 +16,7 @@ function initMap() {
   map.setOptions(opt);
 
   // coordenada limite suroeste
-  var so = new google.maps.LatLng(10.356972, -75.537709)
+  var so = new google.maps.LatLng(10.322967, -75.585290)
   //coordenada limite noreste
   var ne = new google.maps.LatLng(10.462836, -75.451327)
 
@@ -73,16 +73,20 @@ function initMap() {
   // Funcion para tomar la pocision en tiempo real del usuario
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
-      var pos = {
-        lat: position.coords.latitude,
-        lng: position.coords.longitude
-      };
-
-      infoWindow.setPosition(pos);
-      infoWindow.setContent('Usted se encuentra aqui');
-      infoWindow.open(map);
-      map.setCenter(pos);
-      map.setZoom(15);
+      var pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude)
+      var polygon = createPolygon();
+      var posInCtg = isMarkerInPolygon(pos, polygon)
+      if(posInCtg) {
+        infoWindow.setPosition(pos);
+        infoWindow.setContent('Usted se encuentra aqui');
+        infoWindow.open(map);
+        map.setCenter(pos);
+        map.setZoom(15);
+      } else{
+        //reemplazar con una notificacion mas agradable a la vista
+        alert("usted no se encuentra en cartagena :v");
+      }
+      
     }, function() {
       handleLocationError(true, infoWindow, map.getCenter());
     });
@@ -143,4 +147,43 @@ function addInfoWindow(marker, message) {
   google.maps.event.addListener(marker, 'click', function () {
       infoWindow.open(map, marker);
   });
+}
+
+//crea poligono para el area de Cartagena
+function createPolygon() {
+  var frontierCoords = [
+    new google.maps.LatLng(10.45765,-75.51169), 
+    new google.maps.LatLng(10.42439,-75.55666), 
+    new google.maps.LatLng(10.4149,-75.55229), 
+    new google.maps.LatLng(10.4088,-75.55336), 
+    new google.maps.LatLng(10.40355,-75.55784), 
+    new google.maps.LatLng(10.39717,-75.56611), 
+    new google.maps.LatLng(10.39625,-75.5664), 
+    new google.maps.LatLng(10.39593,-75.56464), 
+    new google.maps.LatLng(10.39389,-75.56275), 
+    new google.maps.LatLng(10.39254,-75.56105), 
+    new google.maps.LatLng(10.39187,-75.55896), 
+    new google.maps.LatLng(10.39011,-75.54494), 
+    new google.maps.LatLng(10.381,-75.52385), 
+    new google.maps.LatLng(10.35187,-75.51554), 
+    new google.maps.LatLng(10.34305,-75.50915), 
+    new google.maps.LatLng(10.34202,-75.48493), 
+    new google.maps.LatLng(10.36919,-75.45333), 
+    new google.maps.LatLng(10.39034,-75.44771), 
+    new google.maps.LatLng(10.40083,-75.44507), 
+    new google.maps.LatLng(10.40878,-75.44741), 
+    new google.maps.LatLng(10.42528,-75.46049), 
+    new google.maps.LatLng(10.42076,-75.488)
+  ];
+
+  var area = new google.maps.Polygon({
+    paths: frontierCoords,
+  });
+  return area;
+}
+
+//evalua si el usuario esta dentro de Cartagena
+function isMarkerInPolygon(marker, polygon){
+  var pos = google.maps.geometry.poly.containsLocation(marker, polygon) ? true : false;
+  return pos;
 }
