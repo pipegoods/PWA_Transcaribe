@@ -16,9 +16,9 @@ function initMap() {
   map.setOptions(opt);
 
   // coordenada limite suroeste
-  var so = new google.maps.LatLng(10.322967, -75.585290)
+  var so = new google.maps.LatLng(10.267611, -75.578984)
   //coordenada limite noreste
-  var ne = new google.maps.LatLng(10.462836, -75.451327)
+  var ne = new google.maps.LatLng(10.537838, -75.390558)
 
   //bouns para vizualizar solo Cartagena
   var strictBounds = new google.maps.LatLngBounds(so,ne);
