@@ -2,8 +2,8 @@ var estaciones_json =
     {
         "PatioPortal": {
             "name" : "Patio Portal Transcaribe",
-            "lgn": 10.396750,
-            "lat": -75.472193,
+            "lat": 10.396750,
+            "lng": -75.472193,
             "Troncales": [
                 "T100E",
                 "T101",
@@ -24,8 +24,8 @@ var estaciones_json =
 
         "ElGallo" :{
             "name" : "Estación El Gallo",
-            "lgn": 10.396166,
-            "lat": -75.476238,
+            "lat": 10.396166,
+            "lng": -75.476238,
             "Troncales": [
 
             ],
@@ -43,8 +43,8 @@ var estaciones_json =
 
         "MadreBernarda" : {
             "name" : "Estación Transcaribe Madre Bernarda",
-            "lgn": 10.395251,   
-            "lat": -75.478313,
+            "lat": 10.395251,   
+            "lng": -75.478313,
             "Troncales": [
                 "T100E",
                 "T101",
@@ -61,8 +61,8 @@ var estaciones_json =
 
         "LaCastellana" :{
             "name" : "Estación de Transcaribe — La Castellana",
-            "lgn": 10.394477,
-            "lat":  -75.486635,
+            "lat": 10.394477,
+            "lng":  -75.486635,
             "Troncales": [
                 "T100E",
                 "T101"        
@@ -77,8 +77,8 @@ var estaciones_json =
 
         "LosAngeles" : {
             "name" : "Estación Transcaribe Los Angeles",
-            "lgn":  10.395039,
-            "lat":  -75.490367,
+            "lat":  10.395039,
+            "lng":  -75.490367,
             "Troncales": [
                 "T102"
             ],
@@ -92,8 +92,8 @@ var estaciones_json =
 
         "Ejecutivos" :{
             "name" : "Estación Transcaribe Ejecutivos",
-            "lgn": 10.399543,
-            "lat": -75.493667,
+            "lat": 10.399543,
+            "lng": -75.493667,
             "Troncales": [
                 "T101",
                 "T103"
@@ -108,8 +108,8 @@ var estaciones_json =
 
         "OlímpicaTranscaribe" : {
             "name" : "Estación Villa Olímpica Transcaribe",
-            "lgn": 10.403614,
-            "lat": -75.497239,
+            "lat": 10.403614,
+            "lng": -75.497239,
             "Troncales": [
                 "T102"
             ],
@@ -123,8 +123,8 @@ var estaciones_json =
 
         "CuatroVientos" :{
             "name" : "Estación  Cuatro Vientos Transcaribe",
-            "lgn": 10.406525,
-            "lat": -75.502689,
+            "lat": 10.406525,
+            "lng": -75.502689,
             "Troncales": [
                 "T100E",
                 "T101",
@@ -140,8 +140,8 @@ var estaciones_json =
 
         "ElLibano" : {
             "name" : "Estación Transcaribe — Barrio El Libano",
-            "lgn": 10.407349,
-            "lat": -75.507496,
+            "lat": 10.407349,
+            "lng": -75.507496,
             "Troncales": [
                 "T102"
             ],
@@ -156,8 +156,8 @@ var estaciones_json =
 
         "Espana" :{
             "name" : "Estación de Transcaribe — España",
-            "lgn": 10.408317,
-            "lat": -75.512849,
+            "lat": 10.408317,
+            "lng": -75.512849,
             "Troncales": [
                 "T101",
                 "T103"
@@ -172,8 +172,8 @@ var estaciones_json =
 
         "MariaAuxiliadora" : {
             "name" : "Estación de Transcaribe — María Auxiliadora",
-            "lgn": 10.409019,
-            "lat": -75.515855,
+            "lat": 10.409019,
+            "lng": -75.515855,
             "Troncales": [
                 "T100E",
                 "T102"
@@ -189,8 +189,8 @@ var estaciones_json =
 
         "ElPrado" :{
             "name" : "Estación Transcaribe — El Prado",
-            "lgn": 10.411166,
-            "lat": -75.519590,
+            "lat": 10.411166,
+            "lng": -75.519590,
             "Troncales": [
                 "T101",
                 "T102"
@@ -205,8 +205,8 @@ var estaciones_json =
 
         "Bazurto" : {
             "name" : "Estación de Transcaribe — Mercado de Bazurto",
-            "lgn": 10.413813,
-            "lat": -75.524022,
+            "lat": 10.413813,
+            "lng": -75.524022,
             "Troncales": [
                 "T101",
                 "T102",
@@ -226,8 +226,8 @@ var estaciones_json =
 
         "LasDelicias" :{
             "name" : "Estación de Transcaribe — Las Delicias",
-            "lgn": 10.416603,
-            "lat": -75.527902,
+            "lat": 10.416603,
+            "lng": -75.527902,
             "Troncales": [
             
             ],
@@ -241,8 +241,8 @@ var estaciones_json =
 
         "LaPopa" : {
             "name" : "Estación de Transcaribe — La Popa",
-            "lgn": 10.420548,
-            "lat": -75.531094,
+            "lat": 10.420548,
+            "lng": -75.531094,
             "Troncales": [
                 "T101"
     
@@ -257,8 +257,8 @@ var estaciones_json =
 
         "LaAmador" :{
             "name" : "Estación de Transcaribe — La Amador",
-            "lgn": 10.422411,
-            "lat": -75.534586,
+            "lat": 10.422411,
+            "lng": -75.534586,
             "Troncales": [
             
             ],
@@ -272,8 +272,8 @@ var estaciones_json =
 
         "Chambacu" : {
             "name" : "Estación de Transcaribe — Chambacú",
-            "lgn": 10.425940,
-            "lat": -75.540502,
+            "lat": 10.425940,
+            "lng": -75.540502,
             "Troncales": [
                 "T101",
                 "T102"
@@ -288,8 +288,8 @@ var estaciones_json =
 
         "Centro" :{
             "name" : "Estación de Transcaribe — Centro",
-            "lgn": 10.425005,
-            "lat":  -75.546703,
+            "lat": 10.425005,
+            "lng":  -75.546703,
             "Troncales": [
                 "T100E",
                 "T101",
@@ -305,8 +305,8 @@ var estaciones_json =
 
         "Bodeguita" : {
             "name" : "Estación de Transcaribe — Bodeguita",
-            "lgn": 10.420286,
-            "lat": -75.551233,
+            "lat": 10.420286,
+            "lng": -75.551233,
             "Troncales": [
                 "T100E",
                 "T101"

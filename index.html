@@ -8,29 +8,30 @@
     <link rel="stylesheet" href="css/main.css">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
-    
+    <!-- Vue -->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
   </head>
   <body>
     <div id="map"></div>
     <!--panel flotante-->
-    <div class="floatItem">
+    <div id="vf" class="floatItem">
       <div class="grid-container">
-          <a class="iconE"><img src="icon/32x20.png"></a>
-          <a class="iconP"><img src="icon/32x20.png"></a>
-          <a class="iconR"><img src="icon/32x20.png"></a>
+          <a v-on:click="mostrarE" class="iconE"><img :src="iconos.iconoEstacion"></a>
+          <a v-on:click="mostrarP" class="iconP"><img :src="iconos.iconoParadero"></a>
+          <a v-on:click="mostrarPR" class="iconR"><img :src="iconos.iconoPuntoRecarga"></a>
           <a class="waves-effect waves-light btn mostrarT">Mostrar todo</a>
           <div class="barraBusqueda">
             <input id="last_name" placeholder="Buscar" type="text" class="validate">
           </div>
-          <div class="bloqueInformacion"> aqui se mostrara la informacion de las estaciones parderos etc.</div>
+          <div class="bloqueInformacion"> </div>
       </div>
     </div>
     <script type="text/javascript" src="Rutas/coordenadas/estaciones.js"></script>
+    <script type="text/javascript" src="Rutas/coordenadas/paraderos.js"></script>
+    <script type="text/javascript" src="Rutas/coordenadas/puntoRecarga.js"></script>
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="js/main.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyConlCKNtMiVjqODH5mzwlFF8o--cCfw7Q&callback=initMap&libraries=geometry" async defer></script>
-
 </body>
 </html>

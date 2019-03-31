@@ -1,9 +1,21 @@
 var listaMarcadoresEstaciones = []; //Arreglo lista de los marcadores de las estaciones
+var listaMarcadoresparaderos = [];
+var listaMarcadorespuntoRecarga = [];
+var map
+var iconos = {
+  iconoEstacion: 'icon/100x64.png',
+  iconoParadero: 'icon/100x64 - copia.png',
+  iconoPuntoRecarga: 'icon/100x64 - copia (2).png',
+  marcadorEstacion: 'http://maps.google.com/mapfiles/ms/icons/orange-dot.png',
+  marcadorParadero: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
+  marcadorPuntoRecarga: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
+}
+
 function initMap() {
     var infoWindow; //Ventana de informacion
 
     // Se inicializa el mapa con un zoom y un centro predeterminado
-    var map = new google.maps.Map(document.getElementById('map'), {
+    map = new google.maps.Map(document.getElementById('map'), {
     zoom: 14,
     center: {lat: 10.408975, lng: -75.508813 },
     disableDefaultUI: true // Se quitan los botones del mapa
@@ -48,27 +60,9 @@ function initMap() {
     map.setCenter(new google.maps.LatLng(y, x));
  });
 
-  // Se hace un recorrido a la informacion del json de las estaciones
-  for (var estaciones in estaciones_json){ 
-    if (estaciones_json.hasOwnProperty(estaciones)) {
-      var marker = new google.maps.Marker({ // se crea un marcador por estacion
-        draggable: false, // No permite  que el marcador pueda moverse
-        animation: google.maps.Animation.DROP,
-        position: {lat: estaciones_json[estaciones].lgn, lng: estaciones_json[estaciones].lat }, // Se obtiene las latitudes y longitudes de las estaciones en el json
-        icon: 'http://maps.google.com/mapfiles/ms/icons/orange-dot.png' // Esta es un marcador naranja que nos proporciona google
-      });
-      listaMarcadoresEstaciones.push(marker);
-      // se crea el mensaje de la info de los marcadores
-      var message = buildInfoWindowMessage(estaciones_json[estaciones])
-      //anexa informacion a marcador
-      addInfoWindow(marker, message);
-    }
-  }
-  
-  // Aqui se recorre la lista de los marcadores y se colocan en el mapa
-  listaMarcadoresEstaciones.forEach((marcador) => {
-    marcador.setMap(map);
-  });
+ marcarEstaciones(map);
+ marcarParaderos(map);
+ marcarpuntoRecarga(map);
 
   // Funcion para tomar la pocision en tiempo real del usuario
   if (navigator.geolocation) {
@@ -187,3 +181,121 @@ function isMarkerInPolygon(marker, polygon){
   var pos = google.maps.geometry.poly.containsLocation(marker, polygon) ? true : false;
   return pos;
 }
+
+function marcarEstaciones(map){
+  // Se hace un recorrido a la informacion del json de las estaciones
+  for (var estaciones in estaciones_json){ 
+    if (estaciones_json.hasOwnProperty(estaciones)) {
+      var marker = new google.maps.Marker({ // se crea un marcador por estacion
+        draggable: false, // No permite  que el marcador pueda moverse
+        animation: google.maps.Animation.DROP,
+        position: {lat: estaciones_json[estaciones].lat, lng: estaciones_json[estaciones].lng }, // Se obtiene las latitudes y longitudes de las estaciones en el json
+        icon: this.iconos.marcadorEstacion // Esta es un marcador naranja que nos proporciona google
+      });
+      listaMarcadoresEstaciones.push(marker);
+      // se crea el mensaje de la info de los marcadores
+      var message = buildInfoWindowMessage(estaciones_json[estaciones])
+      //anexa informacion a marcador
+      addInfoWindow(marker, message);
+    }
+  }
+  
+  // Aqui se recorre la lista de los marcadores y se colocan en el mapa
+  listaMarcadoresEstaciones.forEach((marcador) => {
+    marcador.setMap(map);
+  });
+}
+
+function marcarParaderos(map){
+  // Se hace un recorrido a la informacion del json de las estaciones
+  for (var paraderos in paraderos_json){ 
+    if (paraderos_json.hasOwnProperty(paraderos)) {
+      var marker = new google.maps.Marker({ // se crea un marcador por estacion
+        draggable: false, // No permite  que el marcador pueda moverse
+        animation: google.maps.Animation.DROP,
+        position: {lat: paraderos_json[paraderos].lat, lng: paraderos_json[paraderos].lng }, // Se obtiene las latitudes y longitudes de las estaciones en el json
+        icon: this.iconos.marcadorParadero // Esta es un marcador naranja que nos proporciona google
+      });
+      listaMarcadoresparaderos.push(marker);
+    }
+  }
+  
+  // Aqui se recorre la lista de los marcadores y se colocan en el mapa
+  listaMarcadoresparaderos.forEach((marcador) => {
+    marcador.setMap(map);
+  });
+}
+
+function marcarpuntoRecarga(map){
+  // Se hace un recorrido a la informacion del json de las estaciones
+  for (var puntoRecarga in puntoRecarga_json){ 
+    if (puntoRecarga_json.hasOwnProperty(puntoRecarga)) {
+      var marker = new google.maps.Marker({ // se crea un marcador por estacion
+        draggable: false, // No permite  que el marcador pueda moverse
+        animation: google.maps.Animation.DROP,
+        position: {lat: puntoRecarga_json[puntoRecarga].lat, lng:puntoRecarga_json[puntoRecarga].lng }, // Se obtiene las latitudes y longitudes de las estaciones en el json
+        icon: this.iconos.marcadorPuntoRecarga // Esta es un marcador naranja que nos proporciona google
+      });
+      listaMarcadorespuntoRecarga.push(marker);
+    }
+  }
+  
+  // Aqui se recorre la lista de los marcadores y se colocan en el mapa
+  listaMarcadorespuntoRecarga.forEach((marcador) => {
+    marcador.setMap(map);
+  });
+}
+
+//aqui se agregara el codigo para la ventana flotante usando vue
+var vf = new Vue({
+  el: '#vf',
+  data: {
+    mostrarEstacion: true,
+    mostrarParaderos: true,
+    mostrarPuntoRecarga: true
+  },
+  methods: {
+    mostrarE: function(event){
+      if(this.mostrarEstacion){
+        listaMarcadoresEstaciones.forEach((marcador) => {
+        marcador.setMap(null);
+      });
+      this.mostrarEstacion = false;
+      }
+      else{
+        listaMarcadoresEstaciones.forEach((marcador) => {
+          marcador.setMap(map);
+        });
+        this.mostrarEstacion = true;
+      }
+    },
+    mostrarP: function(event){
+      if(this.mostrarParaderos){
+        listaMarcadoresparaderos.forEach((marcador) => {
+        marcador.setMap(null);
+      });
+      this.mostrarParaderos = false;
+      }
+      else{
+        listaMarcadoresparaderos.forEach((marcador) => {
+          marcador.setMap(map);
+        });
+        this.mostrarParaderos = true;
+      }
+    },
+    mostrarPR: function(event){
+      if(this.mostrarPuntoRecarga){
+        listaMarcadorespuntoRecarga.forEach((marcador) => {
+        marcador.setMap(null);
+      });
+      this.mostrarPuntoRecarga = false;
+      }
+      else{
+        listaMarcadorespuntoRecarga.forEach((marcador) => {
+          marcador.setMap(map);
+        });
+        this.mostrarPuntoRecarga = true;
+      }
+    }
+  }
+})
