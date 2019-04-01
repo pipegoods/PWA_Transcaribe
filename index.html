@@ -23,7 +23,10 @@
           <div class="barraBusqueda">
             <input id="last_name" placeholder="Buscar" type="text" class="validate">
           </div>
-          <div class="bloqueInformacion"> </div>
+          <div class="bloqueInformacion">
+            <info v-if="bloqueInformacion" v-bind:informacion="informacion"></info>
+            <span v-else>Aqui aparecera la informacion que quieras ver</span>
+          </div>
       </div>
     </div>
     <script type="text/javascript" src="Rutas/coordenadas/estaciones.js"></script>

@@ -132,7 +132,7 @@ function buildInfoWindowMessage(estacion) {
 }
 
 // añade el window info de las estaciones a los marcadores
-function addInfoWindow(marker, message) {
+function addInfoWindow(marker, message, estacion) {
 
   var infoWindow = new google.maps.InfoWindow({
       content: message
@@ -140,7 +140,30 @@ function addInfoWindow(marker, message) {
 
   google.maps.event.addListener(marker, 'click', function () {
       infoWindow.open(map, marker);
+      vf.bloqueInformacion = true;
+      vf.informacion.nombre = estacion.name;
+      vf.informacion.troncales = buildRutasInfo(estacion, "Troncales")
+      vf.informacion.preTroncales = buildRutasInfo(estacion, "PreTroncales")
+      vf.informacion.Alimentadores = buildRutasInfo(estacion, "Alimentadores")
   });
+}
+
+function buildRutasInfo(estacion, cadSitio){ 
+  var varSitio = cadSitio + ": "; 
+  try {
+    if(estacion[cadSitio].length > 0){
+      estacion[cadSitio].forEach((sitio) => {
+        varSitio = varSitio+ " " + sitio + ",";
+      });
+      varSitio = varSitio.substring(0,varSitio.length-1);
+    } else {
+      varSitio = varSitio + "Ninguno";
+    }  
+    return varSitio;
+  } catch (TypeError) {
+    varSitio = varSitio + "Ninguno";
+    return varSitio;
+  }
 }
 
 //crea poligono para el area de Cartagena
@@ -196,7 +219,7 @@ function marcarEstaciones(map){
       // se crea el mensaje de la info de los marcadores
       var message = buildInfoWindowMessage(estaciones_json[estaciones])
       //anexa informacion a marcador
-      addInfoWindow(marker, message);
+      addInfoWindow(marker, message, estaciones_json[estaciones]);
     }
   }
   
@@ -246,16 +269,35 @@ function marcarpuntoRecarga(map){
   });
 }
 
+Vue.component('info', {
+  props: ['informacion'],
+  template: `
+  <ul class="collection">
+    <li class="collection-item">{{ informacion.nombre }}</li>
+    <li class="collection-item">{{ informacion.troncales }}</li>
+    <li class="collection-item">{{ informacion.preTroncales }}</li>
+    <li class="collection-item">{{ informacion.Alimentadores }}</li>
+  </ul>`
+})
+
 //aqui se agregara el codigo para la ventana flotante usando vue
 var vf = new Vue({
   el: '#vf',
   data: {
+    //se usan booleanos para mostrar o quitar los marcadores del mapa, si estan en true al llamar a la funcion se eliminaran y pasaran su valor a false, y si estan en false ocurrira lo contrario
     mostrarEstacion: true,
     mostrarParaderos: true,
-    mostrarPuntoRecarga: true
+    mostrarPuntoRecarga: true,
+    bloqueInformacion: false,//este es el mensaje que se mostrara en el panel de informacion, cada vez que se cambie su valor se modificara en el panel de informacion
+    informacion: {
+      nombre:'',
+      troncales:'',
+      preTroncales:'',
+      alimentadores:''
+    }
   },
   methods: {
-    mostrarE: function(event){
+    mostrarE: function(event){//se ejecuta cuando se preciona el icono de la estacion
       if(this.mostrarEstacion){
         listaMarcadoresEstaciones.forEach((marcador) => {
         marcador.setMap(null);
@@ -269,7 +311,7 @@ var vf = new Vue({
         this.mostrarEstacion = true;
       }
     },
-    mostrarP: function(event){
+    mostrarP: function(event){//se ejecuta cuando se preciona el icono de los paraderos
       if(this.mostrarParaderos){
         listaMarcadoresparaderos.forEach((marcador) => {
         marcador.setMap(null);
@@ -283,7 +325,7 @@ var vf = new Vue({
         this.mostrarParaderos = true;
       }
     },
-    mostrarPR: function(event){
+    mostrarPR: function(event){//se ejecuta cuando se preciona el icono de los puntos de recarga
       if(this.mostrarPuntoRecarga){
         listaMarcadorespuntoRecarga.forEach((marcador) => {
         marcador.setMap(null);
