@@ -3,9 +3,9 @@ var listaMarcadoresparaderos = [];
 var listaMarcadorespuntoRecarga = [];
 var map
 var iconos = {
-  iconoEstacion: 'icon/100x64.png',
-  iconoParadero: 'icon/100x64 - copia.png',
-  iconoPuntoRecarga: 'icon/100x64 - copia (2).png',
+  iconoEstacion: 'icon/100x64-1(2).png',
+  iconoParadero: 'icon/100x64-3(2).png',
+  iconoPuntoRecarga: 'icon/100x64-2(2).png',
   marcadorEstacion: 'http://maps.google.com/mapfiles/ms/icons/orange-dot.png',
   marcadorParadero: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
   marcadorPuntoRecarga: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
