@@ -1,7 +1,7 @@
 var listaMarcadoresEstaciones = []; //Arreglo lista de los marcadores de las estaciones
 var listaMarcadoresparaderos = [];
 var listaMarcadorespuntoRecarga = [];
-var map
+var map;
 var iconos = {
   iconoEstacion: 'icon/100x64-1(2).png',
   iconoParadero: 'icon/100x64-3(2).png',
@@ -11,95 +11,6 @@ var iconos = {
   marcadorPuntoRecarga: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
 }
 
-function initMap() {
-    var infoWindow; //Ventana de informacion
-
-    // Se inicializa el mapa con un zoom y un centro predeterminado
-    map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 14,
-    center: {lat: 10.408975, lng: -75.508813 },
-    disableDefaultUI: true // Se quitan los botones del mapa
-
-  });
-  infoWindow = new google.maps.InfoWindow; // Se inicializa la ventana de informacion
-
-  //limita el zoom del scroll para no salir de la ciudad
-  var opt = { minZoom: 13.75, maxZoom: 22 };
-  map.setOptions(opt);
-
-  // coordenada limite suroeste
-  var so = new google.maps.LatLng(10.267611, -75.578984)
-  //coordenada limite noreste
-  var ne = new google.maps.LatLng(10.537838, -75.390558)
-
-  //bouns para vizualizar solo Cartagena
-  var strictBounds = new google.maps.LatLngBounds(so,ne);
-
-  // EventListener evento de desplazamiento en el mapa
-  google.maps.event.addListener(map, 'dragend', function () {
-    if (strictBounds.contains(map.getCenter())) {
-      return;
-    } 
-    var c = map.getCenter(),
-    x = c.lng(),
-    y = c.lat(),
-    maxX = strictBounds.getNorthEast().lng(),
-    maxY = strictBounds.getNorthEast().lat(),
-    minX = strictBounds.getSouthWest().lng(),
-    minY = strictBounds.getSouthWest().lat();
-
-    if (x < minX) {
-      x = minX;
-    } if (x > maxX) {
-      x = maxX;
-    } if (y < minY) {
-      y = minY;
-    } if (y > maxY) {
-      y = maxY;
-    } 
-    map.setCenter(new google.maps.LatLng(y, x));
- });
-
- marcarEstaciones(map);
- marcarParaderos(map);
- marcarpuntoRecarga(map);
-
-  // Funcion para tomar la pocision en tiempo real del usuario
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function(position) {
-      var pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude)
-      var polygon = createPolygon();
-      var posInCtg = isMarkerInPolygon(pos, polygon)
-      if(posInCtg) {
-        infoWindow.setPosition(pos);
-        infoWindow.setContent('Usted se encuentra aqui');
-        infoWindow.open(map);
-        map.setCenter(pos);
-        map.setZoom(15);
-      } else{
-        //reemplazar con una notificacion mas agradable a la vista
-        alert("usted no se encuentra en cartagena :v");
-      }
-      
-    }, function() {
-      handleLocationError(true, infoWindow, map.getCenter());
-    });
-  } else {
-    // Browser doesn't support Geolocation
-    handleLocationError(false, infoWindow, map.getCenter());
-  }
-
-  function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-    infoWindow.setPosition(pos);
-    infoWindow.setContent(browserHasGeolocation ?
-                          'Error: The Geolocation service failed.' :
-                          'Error: Your browser doesn\'t support geolocation.');
-    infoWindow.open(map);
-  }
-  // Final funcion
-
-
-}
 
 //funcion en la que se construyen las cadenas que contienen las rutas
 function buildRutasInforMessage(estacion, cadSitio){ 
@@ -268,76 +179,3 @@ function marcarpuntoRecarga(map){
     marcador.setMap(map);
   });
 }
-
-Vue.component('info', {
-  props: ['informacion'],
-  template: `
-  <ul class="collection">
-    <li class="collection-item">{{ informacion.nombre }}</li>
-    <li class="collection-item">{{ informacion.troncales }}</li>
-    <li class="collection-item">{{ informacion.preTroncales }}</li>
-    <li class="collection-item">{{ informacion.Alimentadores }}</li>
-  </ul>`
-})
-
-//aqui se agregara el codigo para la ventana flotante usando vue
-var vf = new Vue({
-  el: '#vf',
-  data: {
-    //se usan booleanos para mostrar o quitar los marcadores del mapa, si estan en true al llamar a la funcion se eliminaran y pasaran su valor a false, y si estan en false ocurrira lo contrario
-    mostrarEstacion: true,
-    mostrarParaderos: true,
-    mostrarPuntoRecarga: true,
-    bloqueInformacion: false,//este es el mensaje que se mostrara en el panel de informacion, cada vez que se cambie su valor se modificara en el panel de informacion
-    informacion: {
-      nombre:'',
-      troncales:'',
-      preTroncales:'',
-      alimentadores:''
-    }
-  },
-  methods: {
-    mostrarE: function(event){//se ejecuta cuando se preciona el icono de la estacion
-      if(this.mostrarEstacion){
-        listaMarcadoresEstaciones.forEach((marcador) => {
-        marcador.setMap(null);
-      });
-      this.mostrarEstacion = false;
-      }
-      else{
-        listaMarcadoresEstaciones.forEach((marcador) => {
-          marcador.setMap(map);
-        });
-        this.mostrarEstacion = true;
-      }
-    },
-    mostrarP: function(event){//se ejecuta cuando se preciona el icono de los paraderos
-      if(this.mostrarParaderos){
-        listaMarcadoresparaderos.forEach((marcador) => {
-        marcador.setMap(null);
-      });
-      this.mostrarParaderos = false;
-      }
-      else{
-        listaMarcadoresparaderos.forEach((marcador) => {
-          marcador.setMap(map);
-        });
-        this.mostrarParaderos = true;
-      }
-    },
-    mostrarPR: function(event){//se ejecuta cuando se preciona el icono de los puntos de recarga
-      if(this.mostrarPuntoRecarga){
-        listaMarcadorespuntoRecarga.forEach((marcador) => {
-        marcador.setMap(null);
-      });
-      this.mostrarPuntoRecarga = false;
-      }
-      else{
-        listaMarcadorespuntoRecarga.forEach((marcador) => {
-          marcador.setMap(map);
-        });
-        this.mostrarPuntoRecarga = true;
-      }
-    }
-  }
-})
