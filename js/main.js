@@ -139,12 +139,13 @@ function addInfoWindow(marker, message, estacion) {
   });
 
   google.maps.event.addListener(marker, 'click', function () {
-      infoWindow.open(map, marker);
+      //infoWindow.open(map, marker);
       vf.bloqueInformacion = true;
       vf.informacion.nombre = estacion.name;
       vf.informacion.troncales = buildRutasInfo(estacion, "Troncales")
       vf.informacion.preTroncales = buildRutasInfo(estacion, "PreTroncales")
       vf.informacion.Alimentadores = buildRutasInfo(estacion, "Alimentadores")
+      
   });
 }
 

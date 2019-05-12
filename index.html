@@ -19,13 +19,9 @@
           <a v-on:click="mostrarE" class="iconE"><img :src="iconos.iconoEstacion"></a>
           <a v-on:click="mostrarP" class="iconP"><img :src="iconos.iconoParadero"></a>
           <a v-on:click="mostrarPR" class="iconR"><img :src="iconos.iconoPuntoRecarga"></a>
-          <a class="waves-effect waves-light btn mostrarT">Mostrar todo</a>
-          <div class="barraBusqueda">
-            <input id="last_name" placeholder="Buscar" type="text" class="validate">
-          </div>
-          <div class="bloqueInformacion">
+          <div class="bloqueInformacion" class="card-panel">
             <info v-if="bloqueInformacion" v-bind:informacion="informacion"></info>
-            <span v-else>Aqui aparecera la informacion que quieras ver</span>
+            <span v-else>Selecciona un marcador para ver la informacion del lugar</span>
           </div>
       </div>
     </div>
