@@ -28,7 +28,11 @@ Vue.component('info', {
       isActiveT: false,
       isActiveP: false,
       isActiveA: false,
-      isActiveC: false
+      isActiveC: false,
+      listaPreToncales: [],
+      listaTroncales: [],
+      listaAlimentadores: [],
+      listaCircular: []
     },
     methods: {
       activarT: function(event){
@@ -116,6 +120,89 @@ Vue.component('info', {
           });
           this.mostrarPuntoRecarga = true;
         }
+      },
+      desactivarMarcadores: function(){//se ejecuta cuando se preciona el icono de los puntos de recarga
+         listaMarcadoresEstaciones.forEach((marcador) => {
+           marcador.setMap(null);
+         });
+         listaMarcadoresparaderos.forEach((marcador) => {
+          marcador.setMap(null);
+        });
+        listaMarcadorespuntoRecarga.forEach((marcador) => {
+          marcador.setMap(null);
+        });
+        listaMarcadoresRuta.forEach((marcador) => {
+          marcador.setMap(null);
+        });
+        
+      },
+      mostrarRutaRuta: function(ruta){
+        
+        this.desactivarMarcadores();
+        listaMarcadoresRuta = [];
+        console.log(ruta);
+        ruta.paraderosIDA.forEach((paraderos) => {
+           var marker = new google.maps.Marker({ // se crea un marcador por estacion
+            draggable: false, // No permite  que el marcador pueda moverse
+            animation: google.maps.Animation.DROP,
+            position: {lat: paraderos.lat, lng:paraderos.lng }, // Se obtiene las latitudes y longitudes de las estaciones en el json
+            icon: iconos.marcadorParadero // Esta es un marcador naranja que nos proporciona google
+          });
+          listaMarcadoresRuta.push(marker);
+        });
+
+        ruta.paraderosRegreso.forEach((paraderos) => {
+          var marker = new google.maps.Marker({ // se crea un marcador por estacion
+           draggable: false, // No permite  que el marcador pueda moverse
+           animation: google.maps.Animation.DROP,
+           position: {lat: paraderos.lat, lng:paraderos.lng }, // Se obtiene las latitudes y longitudes de las estaciones en el json
+           icon: iconos.marcadorParaderoR // Esta es un marcador naranja que nos proporciona google
+         });
+         listaMarcadoresRuta.push(marker);
+       });
+
+       ruta.estaciones.forEach((paraderos) => {
+        var marker = new google.maps.Marker({ // se crea un marcador por estacion
+         draggable: false, // No permite  que el marcador pueda moverse
+         animation: google.maps.Animation.DROP,
+         position: {lat: paraderos.lat, lng:paraderos.lng }, // Se obtiene las latitudes y longitudes de las estaciones en el json
+         icon: iconos.marcadorEstacion // Esta es un marcador naranja que nos proporciona google
+       });
+       listaMarcadoresRuta.push(marker);
+     });
+
+        listaMarcadoresRuta.forEach((marcador) => {
+          marcador.setMap(map);
+        });
+       
       }
+    },
+    mounted: function(){
+        rutas_json.forEach((ruta) => {
+          if(ruta.tipo == "PreTroncal"){
+            this.listaPreToncales.push(ruta);
+
+            
+          }
+          else if(ruta.tipo == "Alimentador"){
+            this.listaAlimentadores.push(ruta);
+            
+          }
+
+          else if(ruta.tipo == "Troncal"){
+            this.listaTroncales.push(ruta);
+            
+          }
+
+          else if(ruta.tipo == "Circular"){
+            this.listaCircular.push(ruta);
+            
+          } 
+          else {
+            console.log("Esa ruta no tiene tipo");
+            
+          }
+        });
+        
     }
   })

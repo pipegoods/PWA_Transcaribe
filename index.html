@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PWA Transcaribe</title>
     <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!-- Vue -->
@@ -27,31 +28,20 @@
             <div class="collection">
               <a v-on:click="activarT" class="collection-item" v-bind:class="{ active: isActiveT }">Troncales</a>
               <div v-if="isActiveT" class="collection" style="left: 5%;">
-                <a href="#!" class="collection-item">Alvin</a>
-                <a href="#!" class="collection-item">Alvin</a>
-                <a href="#!" class="collection-item">Alvin</a>
-                <a href="#!" class="collection-item">Alvin</a>
+                <div class="collection-item" v-for="ruta in listaTroncales"><div>{{ ruta.nombre }} <a v-on:click="mostrarRutaRuta(ruta)" class="secondary-content"><i class="material-icons">send</i></a></div></div>
               </div>
               <a v-on:click="activarP" class="collection-item" v-bind:class="{ active: isActiveP }">Pretroncales</a>
               <div v-if="isActiveP" class="collection" style="left: 5%;">
-                <a href="#!" class="collection-item">Alvin</a>
-                <a href="#!" class="collection-item">Alvin</a>
-                <a href="#!" class="collection-item">Alvin</a>
-                <a href="#!" class="collection-item">Alvin</a>
+               <div class="collection-item" v-for="ruta in listaPreToncales"><div>{{ ruta.nombre }} <a v-on:click="mostrarRutaRuta(ruta)" class="secondary-content"><i class="material-icons">send</i></a></div></div>
               </div>
               <a v-on:click="activarA" class="collection-item" v-bind:class="{ active: isActiveA }">Alimetadores</a>
               <div v-if="isActiveA" class="collection" style="left: 5%;">
-                <a href="#!" class="collection-item">Alvin</a>
-                <a href="#!" class="collection-item">Alvin</a>
-                <a href="#!" class="collection-item">Alvin</a>
-                <a href="#!" class="collection-item">Alvin</a>
+                <div class="collection-item" v-for="ruta in listaAlimentadores"><div>{{ ruta.nombre }} <a v-on:click="mostrarRutaRuta(ruta)" class="secondary-content"><i class="material-icons">send</i></a></div></div>
+
               </div>
               <a v-on:click="activarC" class="collection-item" v-bind:class="{ active: isActiveC }">Circular</a>
               <div v-if="isActiveC" class="collection" style="left: 5%;">
-                <a href="#!" class="collection-item">Alvin</a>
-                <a href="#!" class="collection-item">Alvin</a>
-                <a href="#!" class="collection-item">Alvin</a>
-                <a href="#!" class="collection-item">Alvin</a>
+                <div class="collection-item" v-for="ruta in listaCircular"><div>{{ ruta.nombre }} <a v-on:click="mostrarRutaRuta(ruta)" class="secondary-content"><i class="material-icons">send</i></a></div></div>
               </div>
             </div>
           </div>
@@ -60,6 +50,7 @@
     <script type="text/javascript" src="Rutas/coordenadas/estaciones.js"></script>
     <script type="text/javascript" src="Rutas/coordenadas/paraderos.js"></script>
     <script type="text/javascript" src="Rutas/coordenadas/puntoRecarga.js"></script>
+    <script type="text/javascript" src="Rutas/coordenadas/rutas.js"></script>
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="js/main.js"></script>

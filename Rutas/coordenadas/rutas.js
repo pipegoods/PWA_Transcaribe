@@ -1,0 +1,616 @@
+var rutas_json = [
+    {
+        "nomenclatura" : "X104",
+        "nombre" : "Pedro romero - Centro",
+        "tipo" : "PreTroncal",
+        "paraderosIDA" : [
+            {
+                "lat" : 10.401774,
+                "lng":  -75.459473,
+                "nombre" : "Terminal de transporte"
+            },
+            {
+                "lat" : 10.403954,
+                "lng":  -75.456876,
+                "nombre" : "Palmas de Salamanca"
+            },
+            {
+                "lat" : 10.404074, 
+                "lng":  -75.456931,
+                "nombre" : "El cariñoso"
+            },
+            {
+                "lat" : 10.402915, 
+                "lng": -75.459102,
+                "nombre" : "Portales de Alicante"
+            },
+            {
+                "lat" : 10.402156,
+                "lng": -75.460887,
+                "nombre" : "Villas de la Candelaria"
+            },
+            {
+                "lat" : 10.401539, 
+                "lng": -75.463834,
+                "nombre" : "Megaluminios"
+            },
+            {
+                "lat" : 10.400594,
+                "lng":  -75.465965,
+                "nombre" : "IPamena"
+            },
+            {
+                "lat" : 10.400752, 
+                "lng":  -75.470155,
+                "nombre" : "Entrada Las Palmeras"
+            },
+            {
+                "lat" : 10.401435, 
+                "lng":  -75.471778,
+                "nombre" : "Entrada Nuevo Paraiso"
+            },
+            {
+                "lat" : 10.402391, 
+                "lng":  -75.474055,
+                "nombre" : "Entrada Fredonia"
+            },
+            {
+                "lat" : 10.403520, 
+                "lng":  -75.476053,
+                "nombre" : "Cementerio de Olaya"
+            },
+            {
+                "lat" : 10.404483, 
+                "lng":  -75.478536,
+                "nombre" : "Olaya Sector Playa Blanca"
+            },
+            {
+                "lat" : 10.405996, 
+                "lng":  -75.480522,
+                "nombre" : "Olaya Sector La Puntilla"
+            },
+            {
+                "lat" : 10.406132, 
+                "lng":  -75.483404,
+                "nombre" : "Centro Comercial Olaya Plaza"
+            },
+            {
+                "lat" : 10.405498, 
+                "lng":  -75.486395,
+                "nombre" : "Olaya Sector La Central"
+            },
+            {
+                "lat" : 10.406476, 
+                "lng":  -75.490193,
+                "nombre" : "Colegio Almirante Colon"
+            },
+            {
+                "lat" : 10.406614, 
+                "lng":  -75.491022,
+                "nombre" : "Casa de Justicia Chiquinquiá"
+            },
+            {
+                "lat" : 10.407054, 
+                "lng":  -75.493331,
+                "nombre" : "CAI Arrocera"
+            },
+            {
+                "lat" : 10.407698, 
+                "lng":  -75.497023,
+                "nombre" : "Salida Via Perimetral Sector Rafael Nuñez"
+            },
+            {
+                "lat" : 10.408160, 
+                "lng":  -75.499489,
+                "nombre" : "Olaya Sector El Tablón"
+            },
+            {
+                "lat" : 10.408637, 
+                "lng":  -75.502086,
+                "nombre" : "El Líbano"
+            },
+            {
+                "lat" : 10.409341, 
+                "lng":  -75.505753,
+                "nombre" : "Bostón"
+            },
+            {
+                "lat" : 10.409851, 
+                "lng":  -75.508513,
+                "nombre" : "La esquina del Sabor"
+            },
+            {
+                "lat" : 10.410054, 
+                "lng":  -75.511750,
+                "nombre" : "La Candelaria"
+            },
+            {
+                "lat" : 10.411385, 
+                "lng":  -75.516584,
+                "nombre" : "Liceo Pedro de Heredia"
+            },
+            {
+                "lat" : 10.412374, 
+                "lng":  -75.519289,
+                "nombre" : "Alcibia"
+            }
+            
+        ],
+        "estaciones": [
+            {
+                "nombre": "Bazurto",
+                "lat": 10.413813,
+                "lng": -75.524022
+            },
+            {
+                "nombre": "La Popa",
+                "lat": 10.420548,
+                "lng": -75.531094
+            },
+            {
+                "nombre": "Chambacú",
+                "lat": 10.425940,
+                "lng": -75.540502
+            },
+            {
+                "nombre": "Centro",
+                "lat": 10.425005,
+                "lng":  -75.546703
+            },
+            {
+                "nombre": "Bodeguita",
+                "lat": 10.420286,
+                "lng": -75.551233
+            }
+        ],
+        "paraderosRegreso" : [
+            {
+                "lat" : 10.401718, 
+                "lng":  -75.459483,
+                "nombre" : "Terminal de transporte"
+            },
+            {
+                "lat" : 10.402028, 
+                "lng": -75.460862,
+                "nombre" : "Centro Comercial MIO"
+            },
+            {
+                "lat" : 10.401668, 
+                "lng": -75.462493,
+                "nombre" : "Petromil"
+            },
+            {
+                "lat" : 10.400532, 
+                "lng":  -75.465802,
+                "nombre" : "Altamare"
+            },
+            {
+                "lat" : 10.400494, 
+                "lng":  -75.469744,
+                "nombre" : "Entrada Las Palmeras"
+            },
+            {
+                "lat" : 10.401435, 
+                "lng":  -75.471778,
+                "nombre" : "Entrada Nuevo Paraiso"
+            },
+            {
+                "lat" : 10.401811, 
+                "lng":  -75.472908,
+                "nombre" : "Entrada Fredonia"
+            },
+            {
+                "lat" : 10.403614, 
+                "lng":  -75.476578,
+                "nombre" : "Cementerio de Olaya"
+            },
+            {
+                "lat" : 10.404167, 
+                "lng":  -75.478159,
+                "nombre" : "Olaya Sector Playa Blanca"
+            },
+            {
+                "lat" : 10.405044, 
+                "lng":  -75.479389,
+                "nombre" : "Olaya Sector Estela"
+            },
+            {
+                "lat" : 10.406045, 
+                "lng":  -75.484221,
+                "nombre" : "Centro Comercial Olaya Plaza"
+            },
+            {
+                "lat" : 10.405479, 
+                "lng":  -75.486488,
+                "nombre" : "Olaya Sector La Central"
+            },
+            {
+                "lat" : 10.406092, 
+                "lng":  -75.488825,
+                "nombre" : "IE Fulgencio Lequerica"
+            },
+            {
+                "lat" : 10.406631, 
+                "lng":  -75.491577,
+                "nombre" : "Casa de Justicia Chiquinquiá"
+            },
+            {
+                "lat" : 10.406957, 
+                "lng": -75.493094,
+                "nombre" : "CAI Arrocera"
+            },
+            {
+                "lat" : 10.407716, 
+                "lng":  -75.497333,
+                "nombre" : "Salida Via Perimetral Sector Rafael Nuñez"
+            },
+            {
+                "lat" : 10.408124, 
+                "lng":  -75.499594,
+                "nombre" : "Olaya Sector El Tablón"
+            },
+            {
+                "lat" : 10.408649, 
+                "lng":  -75.502333,
+                "nombre" : "El Líbano"
+            },
+            {
+                "lat" : 10.409321, 
+                "lng":  -75.505815,
+                "nombre" : "Bostón"
+            },
+            {
+                "lat" : 10.409872, 
+                "lng":  -75.508911,
+                "nombre" : "La esquina del Sabor"
+            },
+            {
+                "lat" : 10.409892, 
+                "lng":  -75.512807,
+                "nombre" : "La Candelaria"
+            },
+            {
+                "lat" : 10.411329, 
+                "lng":  -75.516565,
+                "nombre" : "Liceo Pedro de Heredia"
+            },
+            {
+                "lat" : 10.412339, 
+                "lng":  -75.519276,
+                "nombre" : "Alcibia"
+            }
+            
+        ]
+    },
+    {
+        "nomenclatura": "A114",
+        "nombre" : "Flor del Campo - Portal",
+        "tipo" : "Alimentador",
+        "estaciones": [
+            {
+                "nombre": "Patio Portal Transcaribe",
+                "lat": 10.396750,
+                "lng": -75.472193
+            }
+        ],
+        "paraderosIDA" : [
+            {
+                "lat" : 10.398588, 
+                "lng":  -75.470294,
+                "nombre" : "Villa Rosita"
+            },
+            {
+                "lat" : 10.400430, 
+                "lng":  -75.466006,
+                "nombre" : "Altamare"
+            },
+            {
+                "lat" : 10.401668, 
+                "lng": -75.462493,
+                "nombre" : "Petromil"
+            },
+            {
+                "lat" : 10.402028, 
+                "lng": -75.460862,
+                "nombre" : "Centro Comercial MIO"
+            },
+            {
+                "lat" : 10.403954,
+                "lng":  -75.456876,
+                "nombre" : "Palmas de Salamanca"
+            },
+            {
+                "lat" : 10.405136, 
+                "lng":  -75.453808,
+                "nombre" : "Central de Abasto"
+            },
+            {
+                "lat" : 10.410654, 
+                "lng":   -75.445121,
+                "nombre" : "URB. La India"
+            },
+            {
+                "lat" : 10.419917,                 
+                "lng":   -75.432656,
+                "nombre" : "Estación Terpel"
+            },
+            {
+                "lat" : 10.417493,    
+                "lng":    -75.439452,
+                "nombre" : "La Sevillana #1"
+            }
+        ],
+        "paraderosRegreso" : [
+            {
+                "lat" :10.398388, 
+                "lng": -75.471007,
+                "nombre" : "Villa Rosita"
+            },
+            {
+                "lat" : 10.399037, 
+                "lng": -75.469371,
+                "nombre" : "Las Palmeras"
+            },
+            {
+                "lat" : 10.402156,
+                "lng": -75.460887,
+                "nombre" : "Villas de la Candelaria"
+            },
+            {
+                "lat" : 10.401539, 
+                "lng": -75.463834,
+                "nombre" : "Megaluminios"
+            },
+            {
+                "lat" : 10.400594,
+                "lng":  -75.465965,
+                "nombre" : "IPamena"
+            },{
+                "lat" : 10.402915, 
+                "lng": -75.459102,
+                "nombre" : "Portales de Alicante"
+            },
+            {
+                "lat" : 10.404074, 
+                "lng":  -75.456931,
+                "nombre" : "El cariñoso"
+            },
+            {
+                "lat" : 10.405809, 
+                "lng":  -75.453538,
+                "nombre" : "Entrada Pozon"
+            },
+            {
+                "lat" : 10.407191, 
+                "lng":  -75.450695,
+                "nombre" : "Frente Central de Abastos"
+            },
+            {
+                "lat" : 10.411314, 
+                "lng":   -75.444490,
+                "nombre" : "URB. La India"
+            },
+            {
+                "lat" :10.414315, 
+                "lng":   -75.443434,
+                "nombre" : "Colegio Gustavo Polecio"
+            },
+            {
+                "lat" :10.416085, 
+                "lng":   -75.445031,
+                "nombre" : "Colombiaton MZ 3G Casa 470"
+            },
+            {
+                "lat" : 10.417981, 
+                "lng":   -75.446903,
+                "nombre" : "Abastos Giraldo"
+            },
+            {
+                "lat" : 10.419132, 
+                "lng":   -75.448008,
+                "nombre" : "Flor del Campo MZ 1C Lote 4"
+            },
+            {
+                "lat" : 10.420924, 
+                "lng":   -75.449577,
+                "nombre" : "Colegio Grabriel Gacria Marquez"
+            },
+            {
+                "lat" : 10.423054, 
+                "lng":  -75.448006,
+                "nombre" : "Bicentenario MZ7 Lote 1"
+            },
+            {
+                "lat" : 10.423560, 
+                "lng": -75.447352,
+                "nombre" : "Bicentenario MZ35 Lote 1"
+            },
+            {
+                "lat" : 10.422790, 
+                "lng": -75.445335,
+                "nombre" : "Ciudad Bicentenario 2"
+            },
+            {
+                "lat" : 10.423328, 
+                "lng": -75.443865,
+                "nombre" : "Bicentenario MZ 75"
+            },
+            {
+                "lat" : 10.424267, 
+                "lng":  -75.443200,
+                "nombre" : "Bicentenario MZ 79"
+            },
+            {
+                "lat" : 10.423380, 
+                "lng":   -75.442106,
+                "nombre" : "Ciudad Bicentenario 1"
+            },
+            {
+                "lat" : 10.421227,   
+                "lng":   -75.441720      ,
+                "nombre" : "Villa Aranjuez MZ 1G"
+            },
+            {
+                "lat" : 10.418411,
+                "lng":    -75.440385,
+                "nombre" : "La Sevillana #2"
+            }
+        ]
+    },
+    {
+        "nomenclatura": "A117",
+        "nombre" : "Pozon - Villa Estrella - Portal",
+        "tipo" : "Alimentador",
+        "estaciones": [
+            {
+                "nombre": "Patio Portal Transcaribe",
+                "lat": 10.396750,
+                "lng": -75.472193
+            }
+        ],
+        "paraderosIDA" : [
+            {
+                "lat" : 10.398588, 
+                "lng":  -75.470294,
+                "nombre" : "Villa Rosita"
+            },
+            {
+                "lat" : 10.400430, 
+                "lng":  -75.466006,
+                "nombre" : "Altamare"
+            },
+            {
+                "lat" : 10.401668, 
+                "lng": -75.462493,
+                "nombre" : "Petromil"
+            },
+            {
+                "lat" : 10.402028, 
+                "lng": -75.460862,
+                "nombre" : "Centro Comercial MIO"
+            },
+            {
+                "lat" : 10.403954,
+                "lng":  -75.456876,
+                "nombre" : "Palmas de Salamanca"
+            },
+            {
+                "lat" : 10.405136, 
+                "lng":  -75.453808,
+                "nombre" : "Central de Abasto"
+            },
+            {
+                "lat" : 10.410654, 
+                "lng":   -75.445121,
+                "nombre" : "URB. La India"
+            },
+            {
+                "lat" : 10.407191, 
+                "lng":  -75.450695,
+                "nombre" : "Frente Central de Abastos"
+            },
+            {
+                "lat" : 10.405809, 
+                "lng":  -75.453538,
+                "nombre" : "Entrada Pozon"
+            },
+            {
+                "lat" : 10.406715, 
+                "lng":  -75.454393,
+                "nombre" : "Pactemos"
+            },
+            {
+                "lat" : 10.408718, 
+                "lng":  -75.455403,
+                "nombre" : "Iglesia de el Pozon"
+            },
+            {
+                "lat" : 10.411001,
+                "lng":   -75.456542,
+                "nombre" : "Mi Locura"
+            },
+            {
+                "lat" : 10.412898, 
+                "lng":   -75.457494,
+                "nombre" : "Hospital el Pozón"
+            },
+            {
+                "lat" : 10.414279, 
+                "lng":  -75.458257,
+                "nombre" : "Barberia Migue"
+            },
+            {
+                "lat" : 10.416278, 
+                "lng":  -75.457965,
+                "nombre" : "COPRESALUD"
+            },
+            {
+                "lat" : 10.417273, 
+                "lng":  -75.458995,
+                "nombre" : "Restaurante Shedai"
+            },
+            {
+                "lat" : 10.416260, 
+                "lng":  -75.459947,
+                "nombre" : "Inicio Pozón"
+            }
+        ],
+        "paraderosRegreso" : [
+            {
+                "lat" :10.398388, 
+                "lng": -75.471007,
+                "nombre" : "Villa Rosita"
+            },
+            {
+                "lat" : 10.399037, 
+                "lng": -75.469371,
+                "nombre" : "Las Palmeras"
+            },
+            {
+                "lat" : 10.400594,
+                "lng":  -75.465965,
+                "nombre" : "IPamena"
+            },
+            {
+                "lat" : 10.401539, 
+                "lng": -75.463834,
+                "nombre" : "Megaluminios"
+            },
+            {
+                "lat" : 10.402718, 
+                "lng": -75.462965,
+                "nombre" : "Sastrería la Prosperidad"
+            },
+            {
+                "lat" : 10.404705, 
+                "lng": -75.464235,
+                "nombre" : "Billares el Kiosco"
+            },
+            {
+                "lat" : 10.408524, 
+                "lng": -75.464834,
+                "nombre" : "CDA"
+            },
+            {
+                "lat" : 10.410596, 
+                "lng":  -75.465520,
+                "nombre" : "Acuacar"
+            },
+            {
+                "lat" : 10.414579, 
+                "lng":   -75.464042,
+                "nombre" : "SuperTiendas El Cañonazo"
+            },
+            {
+                "lat" : 10.415728, 
+                "lng":   -75.462553,
+                "nombre" : "Drogueria Zharick"
+            },
+            {
+                "lat" : 10.415187, 
+                "lng":    -75.460655,
+                "nombre" : "La Carpa Roja"
+            }
+        ]
+    }
+]

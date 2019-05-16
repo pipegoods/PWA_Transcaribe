@@ -1,6 +1,7 @@
 var listaMarcadoresEstaciones = []; //Arreglo lista de los marcadores de las estaciones
 var listaMarcadoresparaderos = [];
 var listaMarcadorespuntoRecarga = [];
+var listaMarcadoresRuta = [];
 var map;
 var iconos = {
   iconoEstacion: 'icon/100x64-1(2).png',
@@ -8,7 +9,8 @@ var iconos = {
   iconoPuntoRecarga: 'icon/100x64-2(2).png',
   marcadorEstacion: 'http://maps.google.com/mapfiles/ms/icons/orange-dot.png',
   marcadorParadero: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
-  marcadorPuntoRecarga: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
+  marcadorPuntoRecarga: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
+  marcadorParaderoR: 'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png'
 }
 
 
