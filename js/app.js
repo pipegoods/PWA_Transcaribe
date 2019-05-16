@@ -24,9 +24,57 @@ Vue.component('info', {
         troncales:'',
         preTroncales:'',
         alimentadores:''
-      }
+      },
+      isActiveT: false,
+      isActiveP: false,
+      isActiveA: false,
+      isActiveC: false
     },
     methods: {
+      activarT: function(event){
+        if(this.isActiveT){
+          this.isActiveT=false;
+        }
+        else{
+          this.isActiveT = true;
+          this.isActiveP = false;
+          this.isActiveA = false;
+          this.isActiveC = false;
+        }
+      },
+      activarP: function(event){
+        if(this.isActiveP){
+          this.isActiveP=false;
+        }
+        else{
+          this.isActiveT = false;
+          this.isActiveP = true;
+          this.isActiveA = false;
+          this.isActiveC = false;
+        }
+      },
+      activarA: function(event){
+        if(this.isActiveA){
+          this.isActiveA=false;
+        }
+        else{
+          this.isActiveT = false;
+          this.isActiveP = false;
+          this.isActiveA = true;
+          this.isActiveC = false;
+        }
+      },
+      activarC: function(event){
+        if(this.isActiveC){
+          this.isActiveC=false;
+        }
+        else{
+          this.isActiveT = false;
+          this.isActiveP = false;
+          this.isActiveA = false;
+          this.isActiveC = true;
+        }
+      },
       mostrarE: function(event){//se ejecuta cuando se preciona el icono de la estacion
         if(this.mostrarEstacion){
           listaMarcadoresEstaciones.forEach((marcador) => {

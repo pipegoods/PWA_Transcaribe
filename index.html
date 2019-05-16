@@ -23,6 +23,38 @@
             <info v-if="bloqueInformacion" v-bind:informacion="informacion"></info>
             <span v-else>Selecciona un marcador para ver la informacion del lugar</span>
           </div>
+          <div class="barraBusqueda">
+            <div class="collection">
+              <a v-on:click="activarT" class="collection-item" v-bind:class="{ active: isActiveT }">Troncales</a>
+              <div v-if="isActiveT" class="collection" style="left: 5%;">
+                <a href="#!" class="collection-item">Alvin</a>
+                <a href="#!" class="collection-item">Alvin</a>
+                <a href="#!" class="collection-item">Alvin</a>
+                <a href="#!" class="collection-item">Alvin</a>
+              </div>
+              <a v-on:click="activarP" class="collection-item" v-bind:class="{ active: isActiveP }">Pretroncales</a>
+              <div v-if="isActiveP" class="collection" style="left: 5%;">
+                <a href="#!" class="collection-item">Alvin</a>
+                <a href="#!" class="collection-item">Alvin</a>
+                <a href="#!" class="collection-item">Alvin</a>
+                <a href="#!" class="collection-item">Alvin</a>
+              </div>
+              <a v-on:click="activarA" class="collection-item" v-bind:class="{ active: isActiveA }">Alimetadores</a>
+              <div v-if="isActiveA" class="collection" style="left: 5%;">
+                <a href="#!" class="collection-item">Alvin</a>
+                <a href="#!" class="collection-item">Alvin</a>
+                <a href="#!" class="collection-item">Alvin</a>
+                <a href="#!" class="collection-item">Alvin</a>
+              </div>
+              <a v-on:click="activarC" class="collection-item" v-bind:class="{ active: isActiveC }">Circular</a>
+              <div v-if="isActiveC" class="collection" style="left: 5%;">
+                <a href="#!" class="collection-item">Alvin</a>
+                <a href="#!" class="collection-item">Alvin</a>
+                <a href="#!" class="collection-item">Alvin</a>
+                <a href="#!" class="collection-item">Alvin</a>
+              </div>
+            </div>
+          </div>
       </div>
     </div>
     <script type="text/javascript" src="Rutas/coordenadas/estaciones.js"></script>

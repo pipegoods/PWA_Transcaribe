@@ -39,6 +39,10 @@
         }
       }
 
+      .wLista{
+        width: 100%
+      }
+
 
       .iconE { grid-area: marcador1; }
       .iconP { grid-area: marcador2; }
