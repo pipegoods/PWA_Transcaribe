@@ -3,6 +3,7 @@ var listaMarcadoresparaderos = [];
 var listaMarcadorespuntoRecarga = [];
 var listaMarcadoresRuta = [];
 var map;
+var s_infoWindow;
 var iconos = {
   iconoEstacion: 'icon/100x64-1(2).png',
   iconoParadero: 'icon/100x64-3(2).png',
@@ -59,6 +60,25 @@ function addInfoWindow(marker, message, estacion) {
       vf.informacion.preTroncales = buildRutasInfo(estacion, "PreTroncales")
       vf.informacion.Alimentadores = buildRutasInfo(estacion, "Alimentadores")
       
+  });
+}
+
+function addInfoWindowv1_29(marker, message) {
+
+  var infoWindow = new google.maps.InfoWindow({
+      content: message
+  });
+
+  google.maps.event.addListener(marker, 'click', function () {
+      if(s_infoWindow != null){
+        s_infoWindow.close()
+        s_infoWindow = infoWindow
+      }
+      infoWindow.open(map, marker);     
+  });
+
+  google.maps.event.addListener(map, 'click', function(){
+      infoWindow.close()
   });
 }
 
@@ -154,6 +174,7 @@ function marcarParaderos(map){
         icon: this.iconos.marcadorParadero // Esta es un marcador naranja que nos proporciona google
       });
       listaMarcadoresparaderos.push(marker);
+      addInfoWindowv1_29(marker, paraderos)
     }
   }
   
@@ -174,6 +195,7 @@ function marcarpuntoRecarga(map){
         icon: this.iconos.marcadorPuntoRecarga // Esta es un marcador naranja que nos proporciona google
       });
       listaMarcadorespuntoRecarga.push(marker);
+      addInfoWindowv1_29(marker, puntoRecarga)
     }
   }
   

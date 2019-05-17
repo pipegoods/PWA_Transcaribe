@@ -84,6 +84,6 @@ function initMap() {
     infoWindow.open(map);
   }
   // Final funcion
-
+  s_infoWindow = infoWindow
 
 }

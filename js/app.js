@@ -140,7 +140,6 @@ Vue.component('info', {
         
         this.desactivarMarcadores();
         listaMarcadoresRuta = [];
-        console.log(ruta);
         ruta.paraderosIDA.forEach((paraderos) => {
            var marker = new google.maps.Marker({ // se crea un marcador por estacion
             draggable: false, // No permite  que el marcador pueda moverse
@@ -149,6 +148,9 @@ Vue.component('info', {
             icon: iconos.marcadorParadero // Esta es un marcador naranja que nos proporciona google
           });
           listaMarcadoresRuta.push(marker);
+          //agrega infowindow con nombre del paradero
+          addInfoWindowv1_29(marker, paraderos.nombre);
+
         });
 
         ruta.paraderosRegreso.forEach((paraderos) => {
@@ -159,6 +161,7 @@ Vue.component('info', {
            icon: iconos.marcadorParaderoR // Esta es un marcador naranja que nos proporciona google
          });
          listaMarcadoresRuta.push(marker);
+         addInfoWindowv1_29(marker, paraderos.nombre);
        });
 
        ruta.estaciones.forEach((paraderos) => {
@@ -169,6 +172,14 @@ Vue.component('info', {
          icon: iconos.marcadorEstacion // Esta es un marcador naranja que nos proporciona google
        });
        listaMarcadoresRuta.push(marker);
+       console.log("nombres? " + paraderos.nombre + " aprouval")
+       console.log(estaciones_json[paraderos.nombre])
+       
+       // se crea el mensaje de la info de los marcadores
+       var message = buildInfoWindowMessage(estaciones_json[paraderos.nombre])
+       //anexa informacion a marcador
+       addInfoWindow(marker, message, estaciones_json[paraderos.nombre]);
+       
      });
 
         listaMarcadoresRuta.forEach((marcador) => {

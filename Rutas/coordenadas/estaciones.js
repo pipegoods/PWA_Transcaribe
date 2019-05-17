@@ -1,6 +1,6 @@
 var estaciones_json = 
     {
-        "PatioPortal": {
+        "Patio Portal Transcaribe": {
             "name" : "Patio Portal Transcaribe",
             "lat": 10.396750,
             "lng": -75.472193,
@@ -23,7 +23,7 @@ var estaciones_json =
         },
 
         "ElGallo" :{
-            "name" : "Estación El Gallo",
+            "name" : "Estación - El Gallo",
             "lat": 10.396166,
             "lng": -75.476238,
             "Troncales": [
@@ -42,7 +42,7 @@ var estaciones_json =
         },
 
         "MadreBernarda" : {
-            "name" : "Estación Transcaribe Madre Bernarda",
+            "name" : "Estación - Madre Bernarda",
             "lat": 10.395251,   
             "lng": -75.478313,
             "Troncales": [
@@ -60,7 +60,7 @@ var estaciones_json =
         },
 
         "LaCastellana" :{
-            "name" : "Estación de Transcaribe — La Castellana",
+            "name" : "Estación — La Castellana",
             "lat": 10.394477,
             "lng":  -75.486635,
             "Troncales": [
@@ -76,7 +76,7 @@ var estaciones_json =
         },
 
         "LosAngeles" : {
-            "name" : "Estación Transcaribe Los Angeles",
+            "name" : "Estación - Los Angeles",
             "lat":  10.395039,
             "lng":  -75.490367,
             "Troncales": [
@@ -91,7 +91,7 @@ var estaciones_json =
         },
 
         "Ejecutivos" :{
-            "name" : "Estación Transcaribe Ejecutivos",
+            "name" : "Estación - Ejecutivos",
             "lat": 10.399543,
             "lng": -75.493667,
             "Troncales": [
@@ -107,7 +107,7 @@ var estaciones_json =
         },
 
         "OlímpicaTranscaribe" : {
-            "name" : "Estación Villa Olímpica Transcaribe",
+            "name" : "Estación - Villa Olímpica",
             "lat": 10.403614,
             "lng": -75.497239,
             "Troncales": [
@@ -122,7 +122,7 @@ var estaciones_json =
         },
 
         "CuatroVientos" :{
-            "name" : "Estación  Cuatro Vientos Transcaribe",
+            "name" : "Estación - Cuatro Vientos",
             "lat": 10.406525,
             "lng": -75.502689,
             "Troncales": [
@@ -139,7 +139,7 @@ var estaciones_json =
         },
 
         "ElLibano" : {
-            "name" : "Estación Transcaribe — Barrio El Libano",
+            "name" : "Estación — Barrio El Libano",
             "lat": 10.407349,
             "lng": -75.507496,
             "Troncales": [
@@ -155,7 +155,7 @@ var estaciones_json =
         },
 
         "Espana" :{
-            "name" : "Estación de Transcaribe — España",
+            "name" : "Estación — España",
             "lat": 10.408317,
             "lng": -75.512849,
             "Troncales": [
@@ -171,7 +171,7 @@ var estaciones_json =
         },
 
         "MariaAuxiliadora" : {
-            "name" : "Estación de Transcaribe — María Auxiliadora",
+            "name" : "Estación — María Auxiliadora",
             "lat": 10.409019,
             "lng": -75.515855,
             "Troncales": [
@@ -188,7 +188,7 @@ var estaciones_json =
         },
 
         "ElPrado" :{
-            "name" : "Estación Transcaribe — El Prado",
+            "name" : "Estación — El Prado",
             "lat": 10.411166,
             "lng": -75.519590,
             "Troncales": [
@@ -204,7 +204,7 @@ var estaciones_json =
         },
 
         "Bazurto" : {
-            "name" : "Estación de Transcaribe — Mercado de Bazurto",
+            "name" : "Estación — Mercado de Bazurto",
             "lat": 10.413813,
             "lng": -75.524022,
             "Troncales": [
@@ -225,7 +225,7 @@ var estaciones_json =
         },
 
         "LasDelicias" :{
-            "name" : "Estación de Transcaribe — Las Delicias",
+            "name" : "Estación — Las Delicias",
             "lat": 10.416603,
             "lng": -75.527902,
             "Troncales": [
@@ -239,8 +239,8 @@ var estaciones_json =
             ]
         },
 
-        "LaPopa" : {
-            "name" : "Estación de Transcaribe — La Popa",
+        "La Popa" : {
+            "name" : "Estación — La Popa",
             "lat": 10.420548,
             "lng": -75.531094,
             "Troncales": [
@@ -255,8 +255,8 @@ var estaciones_json =
             ]
         },
 
-        "LaAmador" :{
-            "name" : "Estación de Transcaribe — La Amador",
+        "Lo Amador" :{
+            "name" : "Estación — Lo Amador",
             "lat": 10.422411,
             "lng": -75.534586,
             "Troncales": [
@@ -270,8 +270,8 @@ var estaciones_json =
             ]
         },
 
-        "Chambacu" : {
-            "name" : "Estación de Transcaribe — Chambacú",
+        "Chambacú" : {
+            "name" : "Estación — Chambacú",
             "lat": 10.425940,
             "lng": -75.540502,
             "Troncales": [
@@ -287,7 +287,7 @@ var estaciones_json =
         },
 
         "Centro" :{
-            "name" : "Estación de Transcaribe — Centro",
+            "name" : "Estación — Centro",
             "lat": 10.425005,
             "lng":  -75.546703,
             "Troncales": [
@@ -304,7 +304,7 @@ var estaciones_json =
         },
 
         "Bodeguita" : {
-            "name" : "Estación de Transcaribe — Bodeguita",
+            "name" : "Estación — Bodeguita",
             "lat": 10.420286,
             "lng": -75.551233,
             "Troncales": [
